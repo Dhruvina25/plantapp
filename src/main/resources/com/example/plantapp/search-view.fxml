@@ -6,8 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import org.kordamp.bootstrapfx.BootstrapFX?>
 
-<BorderPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.plantapp.SearchController">
+<BorderPane fx:id="root" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.plantapp.SearchController">
+    <stylesheets>
+        <BootstrapFX fx:factory="bootstrapFXStylesheet"/>
+    </stylesheets>
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10">
             <padding>

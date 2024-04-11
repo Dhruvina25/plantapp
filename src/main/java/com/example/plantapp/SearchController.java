@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import org.kordamp.bootstrapfx.BootstrapFX;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,6 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SearchController {
+    @FXML
+    BorderPane root;
     @FXML
     private TextField searchField;
     @FXML
@@ -23,20 +27,20 @@ public class SearchController {
 
     @FXML
     private void initialize() {
+//        root.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         searchButton.setOnAction(event -> {
             String query = searchField.getText();
             if (!query.isEmpty()) {
-//                String apiUrl = "YOUR_API_URL_HERE" + query; // Replace with your API endpoint
-//                try {
-//                    String jsonResponse = sendGet(apiUrl);
+                String apiUrl = "YOUR_API_URL_HERE" + query; // Replace with your API endpoint
+                try {
+                    String jsonResponse = sendGet(apiUrl);
                     // Parse JSON response
                     // Example:
                     // YourResponseClass response = gson.fromJson(jsonResponse, YourResponseClass.class);
-//                    resultArea.setText(jsonResponse);
-                    resultArea.setText(query);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                    resultArea.setText(jsonResponse);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
